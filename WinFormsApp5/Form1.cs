@@ -222,7 +222,8 @@ namespace WinFormsApp5
         private void SaveGameToFile(string winner)
         {
             string filePath = "game_results.txt";
-            string gameResult = $"Gra {gamesPlayed}: {winner} wygrywa! (Gracz: {playerWins}, Komputer: {computerWins})\n";
+            string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
+            string gameResult = $"Gra {gamesPlayed} ({currentDate}): {winner} wygrywa! (Gracz: {playerWins}, Komputer: {computerWins})\n";
             File.AppendAllText(filePath, gameResult);
         }
     }
